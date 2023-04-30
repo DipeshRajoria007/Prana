@@ -1,6 +1,20 @@
 const express = require("express");
-const AddHospital = require("../controllers/AddHospital.controller");
-const HospitalRouter = express.Router();
+const {
+  AddPatient,
+  getPatientById,
+  addPatientNewRecord,
+} = require("../controllers/Doctor.controller");
+const {
+  getDoctorsByHospitalId,
+} = require("../controllers/Hospital.controller");
+const { add_user_to_userTable } = require("../middleware/addUserMiddleware");
 
-HospitalRouter.post("/addhospital", AddHospital);
-module.exports = HospitalRouter;
+const hospitalRouter = express.Router();
+
+// hospitalRouter.post("/hospital/addpatient", add_user_to_userTable, AddPatient);
+hospitalRouter.get(
+  "/hospital/getdoctorsbyhospitalid/:id",
+  getDoctorsByHospitalId
+);
+
+module.exports = hospitalRouter;
