@@ -6,7 +6,7 @@ function PatientsTable({ elements }) {
       <td>{index + 1}</td>
       <td>{element.name}</td>
       <td>{element.email}</td>
-      <td>{element.aadhaarNumber}</td>
+      <td>{element.uniqueHealthId}</td>
       <td>{element.contact}</td>
       <td>{element.address}</td>
       <td>
@@ -27,7 +27,7 @@ function PatientsTable({ elements }) {
           <th>Sr No.</th>
           <th>Name </th>
           <th>Email Id</th>
-          <th>Aadhaar No.</th>
+          <th>Unique Health Id</th>
           <th>Contact</th>
           <th>Address</th>
           <th>Action</th>

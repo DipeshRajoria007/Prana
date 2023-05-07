@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const User = require("../model/User.model");
 
 const add_user_to_userTable = async (req, res, next) => {
-  console.log("add_user_to_userTable");
   const {
     email,
     role,

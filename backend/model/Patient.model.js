@@ -1,7 +1,92 @@
 const mongoose = require("mongoose");
+const AutoIncrement = require("mongoose-sequence")(mongoose);
 const Schema = mongoose.Schema;
 
+const followUpSchema = new Schema({
+  _id: false,
+
+  followUpId: {
+    type: Number,
+    default: 0,
+  },
+  date: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+  patientsUpdate: {
+    type: String,
+    required: true,
+  },
+  diagnosis: {
+    type: String,
+    required: true,
+  },
+  medicinePrescription: {
+    type: String,
+    required: true,
+  },
+  tests: {
+    type: String,
+  },
+  createdAt: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+  doctor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Doctor",
+  },
+  hospital: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Hospital",
+  },
+});
+
+const historySchema = new Schema({
+  _id: false,
+  historyId: {
+    type: Number,
+    default: 0,
+  },
+  hospitalVisited: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Hospital",
+  },
+  diagnosis: {
+    type: String,
+    required: true,
+  },
+  medicinePrescription: {
+    type: String,
+    required: true,
+  },
+  symptoms: {
+    type: String,
+    required: true,
+  },
+  tests: {
+    type: String,
+  },
+  followups: [followUpSchema],
+  doctor: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Doctor",
+  },
+  createdAt: {
+    type: Date,
+    required: true,
+    default: Date.now,
+  },
+});
+
 const patientSchema = new Schema({
+  uniqueHealthId: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   name: {
     type: String,
     required: true,
@@ -43,49 +128,7 @@ const patientSchema = new Schema({
     enum: ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"],
     required: true,
   },
-  history: [
-    {
-      hospitalVisited: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Hospital",
-      },
-      diseaseDiagnosed: {
-        type: String,
-        required: true,
-      },
-      medicinePrescription: {
-        type: String,
-        required: true,
-      },
-      reasonForVisit: {
-        type: String,
-        required: true,
-      },
-      tests: {
-        type: String,
-      },
-      followups: {
-        date: {
-          type: Date,
-          required: true,
-          default: Date.now,
-        },
-        patientsUpdate: {
-          type: String,
-          required: true,
-        },
-      },
-      doctor: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Doctor",
-      },
-      createdAt: {
-        type: Date,
-        required: true,
-        default: Date.now,
-      },
-    },
-  ],
+  history: [historySchema],
   active: {
     type: Boolean,
     default: true,

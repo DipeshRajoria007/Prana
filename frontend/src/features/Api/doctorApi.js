@@ -29,6 +29,19 @@ export const doctorApi = createApi({
         };
       },
     }),
+    addFollowUp: builder.mutation({
+      query: ({ payload, id, patientId }) => {
+        console.log(patientId, id, payload);
+        return {
+          url: `/${patientId}/${id}/followup`,
+          method: "PUT",
+          body: payload,
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        };
+      },
+    }),
     getPatientById: builder.query({
       query: (id) => ({
         url: `patient/${id}`,
@@ -41,4 +54,5 @@ export const {
   useAddPatientMutation,
   useGetPatientByIdQuery,
   useAddPatientNewRecordMutation,
+  useAddFollowUpMutation,
 } = doctorApi;

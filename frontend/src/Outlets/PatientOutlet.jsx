@@ -14,6 +14,7 @@ import { FaUserNurse } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Spinner from "../Components/Spinner";
+import MedicalHistory from "../Components/MedicalHistory";
 const PatientOutlet = () => {
   const {
     user: { user: patient },
@@ -78,72 +79,7 @@ const PatientOutlet = () => {
               </div>
             </div>
           </div>
-          <div className="flex  flex-col gap-4 rounded-lg bg-white p-4 px-4 py-2 drop-shadow-2xl">
-            <h1 className="text-xl font-bold uppercase text-gray-900">
-              Medical History
-            </h1>
-            {patient.history.length > 0 ? (
-              patient.history.slice(0, displayCount).map((h) => (
-                <div key={h._id} className="mt-3 flex flex-col justify-between">
-                  {/* <div>
-                    <p className="text-xl text-gray-600">
-                      <BsFillPersonCheckFill className="mr-1 inline-block" />
-                      Doctor consulted : {h.doctor?.name}
-                    </p>
-                    <p className="text-xl text-gray-600">
-                      <FaUserNurse className="mr-1 inline-block" />
-                      Hospital : {h.hospitalVisited?.name}
-                    </p>
-                  </div> */}
-                  <div className="ml-2">
-                    <p className="mb-1">
-                      <span className="font-bold">Hospital Visited:</span>{" "}
-                      {h?.hospitalVisited?.name}
-                    </p>
-                    <p className="mb-1">
-                      <span className="font-bold">Disease Diagnosed:</span>{" "}
-                      {h?.diseaseDiagnosed}
-                    </p>
-                    <p className="mb-1">
-                      <span className="font-bold">Date of Diagnosis:</span>{" "}
-                      {new Date(h?.createdAt).toLocaleDateString()}
-                    </p>
-                    <p className="mb-1">
-                      <span className="font-bold">Treatment Received:</span>{" "}
-                      {h?.treatment}
-                    </p>
-                    <p className="mb-1">
-                      <span className="font-bold">Reason for Visit:</span>{" "}
-                      {h?.reasonForVisit}
-                    </p>
-                    <p className="mb-1">
-                      <span className="font-bold">Doctor Name:</span>{" "}
-                      {h?.doctor?.name}
-                    </p>
-                    <hr className="my-2" />
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p className="text-sm text-gray-600">No medical history found</p>
-            )}
-            {patient?.history?.length > displayCount && (
-              <button
-                onClick={() => setDisplayCount(displayCount + 10)}
-                className="rounded-lg  bg-blue-500 p-2 text-white hover:bg-blue-700"
-              >
-                Show more
-              </button>
-            )}
-            {displayCount > 10 && (
-              <button
-                onClick={() => setDisplayCount(0)}
-                className="rounded-lg  bg-blue-500 p-2 text-white hover:bg-blue-700"
-              >
-                Hide Records
-              </button>
-            )}
-          </div>
+          <MedicalHistory patient={patient} />
         </>
       )}
     </div>

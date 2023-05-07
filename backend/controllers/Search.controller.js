@@ -9,6 +9,7 @@ const searchPatient = async (req, res) => {
       $or: [
         { name: { $regex: searchTerm, $options: "i" } },
         { email: { $regex: searchTerm, $options: "i" } },
+        { uniqueHealthId: { $regex: searchTerm, $options: "i" } },
         { aadhaarNumber: { $regex: searchTerm, $options: "i" } },
       ],
     });

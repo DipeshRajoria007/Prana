@@ -3,6 +3,18 @@ const Admin = require("../model/Admin.model");
 const Patient = require("../model/Patient.model");
 const Doctor = require("../model/Doctor.model");
 const Hospital = require("../model/Hospital.model");
+const HealthIdCounter = require("../model/HealthIdCounter");
+const getNextHealthIdValue = async () => {
+  const counter = await HealthIdCounter.findOneAndUpdate(
+    { _id: "healthId" },
+    { $inc: { sequenceValue: 1 } },
+    { new: true, upsert: true }
+  );
+  console.log("this is counter : ", counter);
+
+  return counter.sequenceValue.toString().padStart(4, "0");
+};
+
 const get_user_from_respectiveTable = async (req, res) => {
   console.log("getUser route");
   const { email, role } = req.body;
@@ -109,8 +121,11 @@ const add_user_to_table = async (req, res) => {
       contact,
       doctorId,
     } = req.body;
+    const healthId = await getNextHealthIdValue();
+    const uniqueHealthId = `UHID${healthId}`;
 
     const newPatient = new Patient({
+      uniqueHealthId,
       name,
       age,
       gender,
@@ -126,7 +141,7 @@ const add_user_to_table = async (req, res) => {
       console.error(err);
       return res.status(400).json({ message: err });
     }
-    return res.status(201).json({ message: newPatient });
+    return res.status(201).json({ message: "Patient added" });
   }
 };
 module.exports = { get_user_from_respectiveTable, add_user_to_table };
