@@ -1,0 +1,636 @@
+{
+    "extension": "linecounter",
+    "version": "0.2.7",
+    "workspace": "/Users/dipeshrajoria/Desktop/Capstone",
+    "linecount": [
+        {
+            "version": "0.2.7",
+            "counttime": "2023-05-09 06:21:33",
+            "filesum": 95,
+            "codesum": 13598,
+            "commentsum": 274,
+            "blanksum": 297,
+            "statistics": {
+                ".js": {
+                    "code": 2839,
+                    "comment": 32,
+                    "blank": 111
+                },
+                ".md": {
+                    "code": 2,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".json": {
+                    "code": 7875,
+                    "comment": 0,
+                    "blank": 46
+                },
+                "": {
+                    "code": 18,
+                    "comment": 10,
+                    "blank": 2
+                },
+                ".jsx": {
+                    "code": 2459,
+                    "comment": 231,
+                    "blank": 131
+                },
+                ".css": {
+                    "code": 118,
+                    "comment": 0,
+                    "blank": 7
+                },
+                ".cjs": {
+                    "code": 25,
+                    "comment": 1,
+                    "blank": 0
+                },
+                ".svg": {
+                    "code": 249,
+                    "comment": 0,
+                    "blank": 0
+                },
+                ".html": {
+                    "code": 13,
+                    "comment": 0,
+                    "blank": 0
+                }
+            },
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 1,
+                    "filename": "backend/.env"
+                },
+                {
+                    "blank": 9,
+                    "code": 255,
+                    "comment": 0,
+                    "filename": "backend/controllers/Admin.controller.js"
+                },
+                {
+                    "blank": 18,
+                    "code": 163,
+                    "comment": 17,
+                    "filename": "backend/controllers/Doctor.controller.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "backend/controllers/Hospital.controller.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "backend/controllers/Patient.controller.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "backend/controllers/Search.controller.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 138,
+                    "comment": 2,
+                    "filename": "backend/controllers/user.controller.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 29,
+                    "comment": 1,
+                    "filename": "backend/index.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 48,
+                    "comment": 2,
+                    "filename": "backend/middleware/addUserMiddleware.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "backend/middleware/checkRole.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 1,
+                    "filename": "backend/model/Admin.model.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 53,
+                    "comment": 0,
+                    "filename": "backend/model/Doctor.model.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "backend/model/FollowUpCounter.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "backend/model/HealthIdCounter.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "backend/model/HistoryCounter.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "backend/model/Hospital.model.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "backend/model/HospitalAdmin.model.js"
+                },
+                {
+                    "blank": 5,
+                    "code": 142,
+                    "comment": 0,
+                    "filename": "backend/model/Patient.model.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 38,
+                    "comment": 6,
+                    "filename": "backend/model/User.model.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 2276,
+                    "comment": 0,
+                    "filename": "backend/package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "backend/package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "backend/routes/admin-router.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "backend/routes/doctor-router.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 16,
+                    "comment": 1,
+                    "filename": "backend/routes/hospital-router.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "backend/routes/login-route.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "backend/routes/patient-router.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "backend/routes/search-router.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "backend/routes/user-routes.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 9,
+                    "filename": "frontend/.gitignore"
+                },
+                {
+                    "blank": 0,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend/index.html"
+                },
+                {
+                    "blank": 45,
+                    "code": 5536,
+                    "comment": 0,
+                    "filename": "frontend/package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 40,
+                    "comment": 0,
+                    "filename": "frontend/package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "frontend/postcss.config.cjs"
+                },
+                {
+                    "filename": "frontend/public/logo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "frontend/public/logo.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "frontend/src/App.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 71,
+                    "comment": 0,
+                    "filename": "frontend/src/App.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "frontend/src/assets/DM 06.svg"
+                },
+                {
+                    "blank": 0,
+                    "code": 227,
+                    "comment": 0,
+                    "filename": "frontend/src/assets/Hero.svg"
+                },
+                {
+                    "filename": "frontend/src/assets/PRANA-LOGO.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 52,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/AreaChart.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/Benifits.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/DoctorsTable.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/FollowUpCard.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 114,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/FollowupForm.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 111,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/Footer.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/Hero.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/HospitalsTable.jsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 118,
+                    "comment": 3,
+                    "filename": "frontend/src/Components/LoginForm.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 91,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/MedicalHistory.jsx"
+                },
+                {
+                    "blank": 9,
+                    "code": 116,
+                    "comment": 1,
+                    "filename": "frontend/src/Components/Navbar.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 179,
+                    "comment": 50,
+                    "filename": "frontend/src/Components/PatientCard.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 39,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/PatientsTable.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/PieChart.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 71,
+                    "comment": 7,
+                    "filename": "frontend/src/Components/ResetPasswordForm.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 54,
+                    "comment": 27,
+                    "filename": "frontend/src/Components/SideBar.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/SideTable.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/SmallSpinner.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "frontend/src/Components/Spinner.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 1399,
+                    "comment": 0,
+                    "filename": "frontend/src/constants/index.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 77,
+                    "comment": 0,
+                    "filename": "frontend/src/features/Api/adminApi.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 56,
+                    "comment": 0,
+                    "filename": "frontend/src/features/Api/doctorApi.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend/src/features/Api/hospitalApi.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend/src/features/Api/searchApi.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "frontend/src/features/auth/authService.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 58,
+                    "comment": 1,
+                    "filename": "frontend/src/features/auth/authSlice.js"
+                },
+                {
+                    "blank": 7,
+                    "code": 118,
+                    "comment": 0,
+                    "filename": "frontend/src/index.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "frontend/src/main.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 152,
+                    "comment": 3,
+                    "filename": "frontend/src/Outlets/AddDoctor.jsx"
+                },
+                {
+                    "blank": 5,
+                    "code": 178,
+                    "comment": 4,
+                    "filename": "frontend/src/Outlets/AddHospital.jsx"
+                },
+                {
+                    "blank": 8,
+                    "code": 146,
+                    "comment": 5,
+                    "filename": "frontend/src/Outlets/AddPatient.jsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 155,
+                    "comment": 6,
+                    "filename": "frontend/src/Outlets/AdminOutlet.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 37,
+                    "comment": 63,
+                    "filename": "frontend/src/Outlets/DoctorOutlet.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/DoctorsOutlet.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/HospitalOutlet.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 38,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/HospitalsOutlet.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 87,
+                    "comment": 45,
+                    "filename": "frontend/src/Outlets/PatientOutlet.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 80,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/PatientOutletForDoctor.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/PatientPrescription.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/PatientsOutlet.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "frontend/src/Outlets/SettingsOutlet.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/AdminDashboard.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/DoctorDashboard.jsx"
+                },
+                {
+                    "blank": 4,
+                    "code": 73,
+                    "comment": 17,
+                    "filename": "frontend/src/Pages/Features.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 24,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/Home.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 36,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/HospitalDashboard.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/Login.jsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/NotAuthorized.jsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/NotFound.jsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 32,
+                    "comment": 0,
+                    "filename": "frontend/src/Pages/PatientDashboard.jsx"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "frontend/src/store/store.js"
+                },
+                {
+                    "blank": 8,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "frontend/src/styles.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 19,
+                    "comment": 1,
+                    "filename": "frontend/tailwind.config.cjs"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 1,
+                    "filename": "frontend/vite.config.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "README.md"
+                }
+            ]
+        }
+    ]
+}

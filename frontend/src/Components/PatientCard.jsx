@@ -3,20 +3,20 @@ import {
   BsFillTelephoneFill,
   BsFillEnvelopeFill,
   BsFillCalendarFill,
-  BsFillHouseFill,
   BsPersonVcardFill,
-  BsFillPersonCheckFill,
   BsFillHeartFill,
 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+
 import { useForm } from "@mantine/form";
-import { TextInput, Textarea } from "@mantine/core";
-import { RiUserAddFill } from "react-icons/ri";
+import { Textarea } from "@mantine/core";
 import { BiMessageDetail } from "react-icons/bi";
 import { FaNotesMedical } from "react-icons/fa";
 import { IoIosMedkit } from "react-icons/io";
 import { useSelector } from "react-redux";
-import { useAddPatientNewRecordMutation } from "../features/Api/doctorApi";
+import {
+  useAddPatientNewRecordMutation,
+  useGetPatientByIdQuery,
+} from "../features/Api/doctorApi";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
 import MedicalHistory from "./MedicalHistory";
@@ -29,6 +29,7 @@ function PatientCard({ patient }) {
   const {
     user: { user },
   } = useSelector((state) => state.auth);
+  const { refetch } = useGetPatientByIdQuery(patient?._id);
   const [
     addPatientNewRecord,
     { data, success, error, isError, isSuccess, isLoading, isFetching },
@@ -46,9 +47,13 @@ function PatientCard({ patient }) {
       medicinePrescription: (value) => value.trim().length > 0,
     },
   });
+
   useEffect(() => {
     if (isError) toast.error(error.data.message);
-    if (isSuccess) toast.success(data.message);
+    if (isSuccess) {
+      toast.success(data.message);
+      refetch();
+    }
   }, [isError, isSuccess]);
   const handleSubmit = (values) => {
     console.log(patient._id);

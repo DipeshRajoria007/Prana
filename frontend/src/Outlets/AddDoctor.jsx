@@ -21,7 +21,10 @@ import { AiFillIdcard } from "react-icons/ai";
 const AddDoctor = () => {
   const id = useId();
   const { data: Hospitals, isLoading, isError, error } = useGetHospitalsQuery();
-  const [addDoctor, { isError2, isSuccess2, error2 }] = useAddDoctorMutation();
+  const [
+    addDoctor,
+    { isError: isError2, isSuccess: isSuccess2, data: data2, error: error2 },
+  ] = useAddDoctorMutation();
   const [specializations, setSpecializations] = useState([]);
   const [name, setName] = useState("");
   const [contact, setContact] = useState();
@@ -32,8 +35,9 @@ const AddDoctor = () => {
   const [hospital, setHospital] = useState("");
   const [aadhaarNumber, setAadhaar] = useState();
   useEffect(() => {
-    if (isError2) toast.error(error2);
-  }, [isError2]);
+    if (isError2) toast.error(error2.error);
+    if (isSuccess2) toast.success(data2.message);
+  }, [isError2, isSuccess2]);
   let HospitalData = [];
   Hospitals?.data?.forEach((hospital) => {
     let data = {};
@@ -144,8 +148,8 @@ const AddDoctor = () => {
           <Input
             icon={<AiFillIdcard />}
             variant="filled"
-            onChange={(e) => setAadhaar(e)}
-            placeholder="Enter your address"
+            onChange={(e) => setAadhaar(e.target.value)}
+            placeholder="Enter your aadhaar Number"
           />
         </Input.Wrapper>
         <button className="rounded-sm bg-purplee p-2 text-white">

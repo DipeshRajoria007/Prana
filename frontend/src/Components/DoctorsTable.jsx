@@ -1,17 +1,20 @@
 import { Table } from "@mantine/core";
 
 function DoctorsTable({ elements }) {
-  const rows = elements?.map((element) => (
+  const rows = elements?.map((element, idx) => (
     <tr key={element.id}>
+      <td>{idx + 1}</td>
       <td>{element.name}</td>
       <td>{element.email}</td>
       <td>{element.contact}</td>
       <td>
-        {element.specializations?.map((speciality) => (
-          <p key={speciality}>{speciality}</p>
+        {element.specializations?.map((speciality, idx) => (
+          <p key={speciality}>
+            {speciality}{" "}
+            {element.specializations.length !== idx + 1 ? ", " : ""}
+          </p>
         ))}
       </td>
-      <td>{element.address}</td>
     </tr>
   ));
 
@@ -19,11 +22,11 @@ function DoctorsTable({ elements }) {
     <Table>
       <thead>
         <tr>
+          <th>Sr No.</th>
           <th>Name </th>
           <th>Email Id</th>
           <th>Contact</th>
           <th>Specialization</th>
-          <th>Address</th>
         </tr>
       </thead>
       <tbody>{rows}</tbody>

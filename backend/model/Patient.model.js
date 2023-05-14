@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const AutoIncrement = require("mongoose-sequence")(mongoose);
 const Schema = mongoose.Schema;
 
 const followUpSchema = new Schema({
@@ -115,8 +114,22 @@ const patientSchema = new Schema({
     required: true,
   },
   address: {
-    type: String,
-    required: true,
+    street: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      required: true,
+    },
+    pincode: {
+      type: String,
+      required: true,
+    },
   },
   aadhaarNumber: {
     type: String,

@@ -26,7 +26,7 @@ const HospitalDashboard = () => {
     },
   ];
   return (
-    <div>
+    <div className="flex h-[100vh]">
       <SideBar props={props} />
       <div className=" flex-1 overflow-y-scroll">
         <Outlet />

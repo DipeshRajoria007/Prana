@@ -21,7 +21,9 @@ import NotFound from "./Pages/NotFound";
 import PatientOutlet from "./Outlets/PatientOutlet";
 import PatientDetails from "./Outlets/PatientPrescription";
 import SettingsOutlet from "./Outlets/SettingsOutlet";
+import AppointmentOutlet from "./Outlets/AppointmentOutlet.jsx";
 import HospitalOutlet from "./Outlets/HospitalOutlet";
+import Features from "./Pages/Features";
 
 function App() {
   return (
@@ -29,6 +31,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/features" element={<Features />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/admin" element={<AdminDashboard />}>
             <Route path="/admin" element={<AdminOutlet />} />
@@ -51,6 +54,7 @@ function App() {
           </Route>
           <Route path="/patient" element={<PatientDashboard />}>
             <Route path="/patient" element={<PatientOutlet />} />
+            <Route path="appointment" element={<AppointmentOutlet />} />
             <Route path="settings" element={<SettingsOutlet />} />
           </Route>
           <Route path="/hospital" element={<HospitalDashboard />}>

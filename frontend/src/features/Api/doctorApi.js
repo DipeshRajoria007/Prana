@@ -47,6 +47,22 @@ export const doctorApi = createApi({
         url: `patient/${id}`,
       }),
     }),
+    getLastTenPatientsByDoctorId: builder.query({
+      query: (id) => {
+        console.log(id);
+        return {
+          url: `${id}/recentpatients`,
+        };
+      },
+    }),
+    getAllPatientsMonthWiseAddedByParticularDoctor: builder.query({
+      query: (id) => {
+        console.log(id);
+        return {
+          url: `${id}/patients`,
+        };
+      },
+    }),
   }),
 });
 
@@ -55,4 +71,6 @@ export const {
   useGetPatientByIdQuery,
   useAddPatientNewRecordMutation,
   useAddFollowUpMutation,
+  useGetAllPatientsMonthWiseAddedByParticularDoctorQuery,
+  useGetLastTenPatientsByDoctorIdQuery,
 } = doctorApi;

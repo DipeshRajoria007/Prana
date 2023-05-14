@@ -2,6 +2,7 @@ import styles from "../styles";
 import Navbar from "../Components/Navbar";
 import Hero from "../Components/Hero";
 import Benifits from "../Components/Benifits";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   return (
@@ -17,9 +18,8 @@ const Home = () => {
           <Benifits />
         </div>
       </div>
-      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-        <div className={`${styles.boxWidth}`}>other sections</div>
-      </div>
+
+      <Footer />
     </div>
   );
 };

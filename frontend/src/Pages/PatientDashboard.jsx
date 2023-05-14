@@ -5,6 +5,7 @@ import { AiFillSetting } from "react-icons/ai";
 import SideBar from "../Components/SideBar";
 import NotAuthorized from "./NotAuthorized";
 import { Outlet } from "react-router-dom";
+import { BsBookmarksFill } from "react-icons/bs";
 const PatientDashboard = () => {
   const { user } = useSelector((state) => state.auth);
   if (user.user.role !== "PATIENT") return <NotAuthorized />;
@@ -14,6 +15,11 @@ const PatientDashboard = () => {
       title: "Dashboard",
       icon: <RxDashboard className="text-2xl" />,
       url: "./",
+    },
+    {
+      title: "Appointment",
+      icon: <BsBookmarksFill className="text-2xl" />,
+      url: "appointment",
     },
     {
       title: "Settings",

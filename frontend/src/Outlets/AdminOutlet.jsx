@@ -144,14 +144,6 @@ const AdminOutlet = () => {
           }}
         />
       </div>
-
-      {/* <div className="drop-shadow-c col-span-3 flex h-48 flex-col gap-2 rounded-2xl bg-white p-4 ">
-        <div className="flex gap-2 ">
-          <RiUserHeartLine className="text-xl" />
-          <h1>Recently Added Patients </h1>
-        </div>
-        <PatientsTable elements={lastTenPatients?.result} />
-      </div> */}
       <div className="drop-shadow-c col-span-1 flex h-48 flex-col gap-2 rounded-2xl bg-white p-4 ">
         <div className="flex gap-2 ">
           <FaWheelchair className="text-xl" />

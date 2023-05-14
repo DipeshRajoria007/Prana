@@ -1,0 +1,120 @@
+===============================================================================
+EXTENSION NAME : linecounter
+EXTENSION VERSION : 0.2.7
+-------------------------------------------------------------------------------
+count time : 2023-05-09 06:21:33
+count workspace : /Users/dipeshrajoria/Desktop/Capstone
+total files : 95
+total code lines : 13598
+total comment lines : 274
+total blank lines : 297
+
+    statistics
+   |      extension|     total code|  total comment|    total blank|percent|
+   -------------------------------------------------------------------------
+   |            .js|           2839|             32|            111|     21|
+   |            .md|              2|              0|              0|  0.015|
+   |          .json|           7875|              0|             46|     58|
+   |               |             18|             10|              2|   0.13|
+   |           .jsx|           2459|            231|            131|     18|
+   |           .css|            118|              0|              7|   0.87|
+   |           .cjs|             25|              1|              0|   0.18|
+   |           .svg|            249|              0|              0|    1.8|
+   |          .html|             13|              0|              0|  0.096|
+   -------------------------------------------------------------------------
+backend/.env, code is 4, comment is 1, blank is 0.
+backend/controllers/Admin.controller.js, code is 255, comment is 0, blank is 9.
+backend/controllers/Doctor.controller.js, code is 163, comment is 17, blank is 18.
+backend/controllers/Hospital.controller.js, code is 12, comment is 0, blank is 2.
+backend/controllers/Patient.controller.js, code is 40, comment is 0, blank is 8.
+backend/controllers/Search.controller.js, code is 22, comment is 0, blank is 2.
+backend/controllers/user.controller.js, code is 138, comment is 2, blank is 7.
+backend/index.js, code is 29, comment is 1, blank is 5.
+backend/middleware/addUserMiddleware.js, code is 48, comment is 2, blank is 3.
+backend/middleware/checkRole.js, code is 23, comment is 0, blank is 1.
+backend/model/Admin.model.js, code is 28, comment is 1, blank is 1.
+backend/model/Doctor.model.js, code is 53, comment is 0, blank is 2.
+backend/model/FollowUpCounter.js, code is 6, comment is 0, blank is 2.
+backend/model/HealthIdCounter.js, code is 6, comment is 0, blank is 2.
+backend/model/HistoryCounter.js, code is 6, comment is 0, blank is 2.
+backend/model/Hospital.model.js, code is 49, comment is 0, blank is 2.
+backend/model/HospitalAdmin.model.js, code is 14, comment is 0, blank is 2.
+backend/model/Patient.model.js, code is 142, comment is 0, blank is 5.
+backend/model/User.model.js, code is 38, comment is 6, blank is 2.
+backend/package-lock.json, code is 2276, comment is 0, blank is 1.
+backend/package.json, code is 23, comment is 0, blank is 0.
+backend/routes/admin-router.js, code is 32, comment is 0, blank is 0.
+backend/routes/doctor-router.js, code is 14, comment is 0, blank is 2.
+backend/routes/hospital-router.js, code is 16, comment is 1, blank is 3.
+backend/routes/login-route.js, code is 8, comment is 0, blank is 0.
+backend/routes/patient-router.js, code is 7, comment is 0, blank is 2.
+backend/routes/search-router.js, code is 5, comment is 0, blank is 1.
+backend/routes/user-routes.js, code is 6, comment is 0, blank is 0.
+frontend/.gitignore, code is 14, comment is 9, blank is 2.
+frontend/index.html, code is 13, comment is 0, blank is 0.
+frontend/package-lock.json, code is 5536, comment is 0, blank is 45.
+frontend/package.json, code is 40, comment is 0, blank is 0.
+frontend/postcss.config.cjs, code is 6, comment is 0, blank is 0.
+frontend/public/logo.png, it is a binary file.
+frontend/public/logo.svg, code is 1, comment is 0, blank is 0.
+frontend/src/App.css, code is 0, comment is 0, blank is 0.
+frontend/src/App.jsx, code is 71, comment is 0, blank is 2.
+frontend/src/assets/DM 06.svg, code is 21, comment is 0, blank is 0.
+frontend/src/assets/Hero.svg, code is 227, comment is 0, blank is 0.
+frontend/src/assets/PRANA-LOGO.png, it is a binary file.
+frontend/src/Components/AreaChart.jsx, code is 52, comment is 0, blank is 4.
+frontend/src/Components/Benifits.jsx, code is 32, comment is 0, blank is 2.
+frontend/src/Components/DoctorsTable.jsx, code is 31, comment is 0, blank is 2.
+frontend/src/Components/FollowUpCard.jsx, code is 6, comment is 0, blank is 0.
+frontend/src/Components/FollowupForm.jsx, code is 114, comment is 0, blank is 3.
+frontend/src/Components/Footer.jsx, code is 111, comment is 0, blank is 3.
+frontend/src/Components/Hero.jsx, code is 7, comment is 0, blank is 0.
+frontend/src/Components/HospitalsTable.jsx, code is 34, comment is 0, blank is 2.
+frontend/src/Components/LoginForm.jsx, code is 118, comment is 3, blank is 7.
+frontend/src/Components/MedicalHistory.jsx, code is 91, comment is 0, blank is 3.
+frontend/src/Components/Navbar.jsx, code is 116, comment is 1, blank is 9.
+frontend/src/Components/PatientCard.jsx, code is 179, comment is 50, blank is 4.
+frontend/src/Components/PatientsTable.jsx, code is 39, comment is 0, blank is 1.
+frontend/src/Components/PieChart.jsx, code is 7, comment is 0, blank is 3.
+frontend/src/Components/ResetPasswordForm.jsx, code is 71, comment is 7, blank is 6.
+frontend/src/Components/SideBar.jsx, code is 54, comment is 27, blank is 3.
+frontend/src/Components/SideTable.jsx, code is 26, comment is 0, blank is 2.
+frontend/src/Components/SmallSpinner.jsx, code is 8, comment is 0, blank is 1.
+frontend/src/Components/Spinner.jsx, code is 8, comment is 0, blank is 1.
+frontend/src/constants/index.js, code is 1399, comment is 0, blank is 4.
+frontend/src/features/Api/adminApi.js, code is 77, comment is 0, blank is 3.
+frontend/src/features/Api/doctorApi.js, code is 56, comment is 0, blank is 2.
+frontend/src/features/Api/hospitalApi.js, code is 13, comment is 0, blank is 2.
+frontend/src/features/Api/searchApi.js, code is 13, comment is 0, blank is 2.
+frontend/src/features/auth/authService.js, code is 17, comment is 0, blank is 2.
+frontend/src/features/auth/authSlice.js, code is 58, comment is 1, blank is 4.
+frontend/src/index.css, code is 118, comment is 0, blank is 7.
+frontend/src/main.jsx, code is 13, comment is 0, blank is 1.
+frontend/src/Outlets/AddDoctor.jsx, code is 152, comment is 3, blank is 4.
+frontend/src/Outlets/AddHospital.jsx, code is 178, comment is 4, blank is 5.
+frontend/src/Outlets/AddPatient.jsx, code is 146, comment is 5, blank is 8.
+frontend/src/Outlets/AdminOutlet.jsx, code is 155, comment is 6, blank is 6.
+frontend/src/Outlets/DoctorOutlet.jsx, code is 37, comment is 63, blank is 4.
+frontend/src/Outlets/DoctorsOutlet.jsx, code is 37, comment is 0, blank is 4.
+frontend/src/Outlets/HospitalOutlet.jsx, code is 9, comment is 0, blank is 1.
+frontend/src/Outlets/HospitalsOutlet.jsx, code is 38, comment is 0, blank is 3.
+frontend/src/Outlets/PatientOutlet.jsx, code is 87, comment is 45, blank is 4.
+frontend/src/Outlets/PatientOutletForDoctor.jsx, code is 80, comment is 0, blank is 4.
+frontend/src/Outlets/PatientPrescription.jsx, code is 19, comment is 0, blank is 1.
+frontend/src/Outlets/PatientsOutlet.jsx, code is 30, comment is 0, blank is 3.
+frontend/src/Outlets/SettingsOutlet.jsx, code is 9, comment is 0, blank is 2.
+frontend/src/Pages/AdminDashboard.jsx, code is 41, comment is 0, blank is 3.
+frontend/src/Pages/DoctorDashboard.jsx, code is 37, comment is 0, blank is 3.
+frontend/src/Pages/Features.jsx, code is 73, comment is 17, blank is 4.
+frontend/src/Pages/Home.jsx, code is 24, comment is 0, blank is 3.
+frontend/src/Pages/HospitalDashboard.jsx, code is 36, comment is 0, blank is 2.
+frontend/src/Pages/Login.jsx, code is 9, comment is 0, blank is 2.
+frontend/src/Pages/NotAuthorized.jsx, code is 28, comment is 0, blank is 2.
+frontend/src/Pages/NotFound.jsx, code is 14, comment is 0, blank is 1.
+frontend/src/Pages/PatientDashboard.jsx, code is 32, comment is 0, blank is 3.
+frontend/src/store/store.js, code is 19, comment is 0, blank is 0.
+frontend/src/styles.js, code is 22, comment is 0, blank is 8.
+frontend/tailwind.config.cjs, code is 19, comment is 1, blank is 0.
+frontend/vite.config.js, code is 5, comment is 1, blank is 1.
+README.md, code is 2, comment is 0, blank is 0.
+===============================================================================

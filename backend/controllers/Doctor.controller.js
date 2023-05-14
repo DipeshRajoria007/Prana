@@ -3,6 +3,8 @@ const FollowUpCounter = require("../model/FollowUpCounter");
 const HistoryCounter = require("../model/HistoryCounter");
 const Patient = require("../model/Patient.model");
 const HealthIdCounter = require("../model/HealthIdCounter");
+const { default: mongoose } = require("mongoose");
+const ObjectId = mongoose.Types.ObjectId;
 const getNextHealthIdValue = async () => {
   const counter = await HealthIdCounter.findOneAndUpdate(
     { _id: "healthId" },
@@ -33,7 +35,12 @@ const AddPatient = async (req, res) => {
       name,
       contact,
       email,
-      address,
+      address: {
+        street: address.street,
+        pincode: address.pincode,
+        city: address.city,
+        state: address.state,
+      },
       aadhaarNumber,
       gender,
       DOB,
@@ -190,9 +197,97 @@ const addFollowUp = async (req, res) => {
   }
 };
 
+const getAllPatientsMonthWiseAddedByDoctorId = async (req, res) => {
+  try {
+    const doctorId = req.params.doctorId;
+    console.log(doctorId);
+    // Aggregate the patients by month
+    // const patientsByMonth = await Patient.aggregate([
+    //   {
+    //     $match: {
+    //       createdBy: doctorId,
+    //     },
+    //   },
+    //   {
+    //     $group: {
+    //       _id: {
+    //         $dateToString: {
+    //           format: "%m",
+    //           date: "$createdAt",
+    //         },
+    //       },
+    //       count: { $sum: 1 },
+    //     },
+    //   },
+    //   {
+    //     $project: {
+    //       _id: 0,
+    //       month: "$_id",
+    //       count: 1,
+    //     },
+    //   },
+    //   {
+    //     $sort: {
+    //       month: 1,
+    //     },
+    //   },
+    // ]);
+    const patientsByMonth = await Patient.aggregate([
+      {
+        $match: {
+          createdBy: new ObjectId(doctorId),
+        },
+      },
+      {
+        $group: {
+          _id: {
+            $dateToString: {
+              format: "%m",
+              date: "$createdAt",
+            },
+          },
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          month: "$_id",
+          count: 1,
+        },
+      },
+      {
+        $sort: {
+          month: 1,
+        },
+      },
+    ]);
+    // const patientsByMonth = await Patient.find({ createdBy: doctorId });
+    console.log(patientsByMonth);
+    // Send the response
+    res.status(200).json(patientsByMonth);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+const getLastTenPatientsByDoctorId = async (req, res) => {
+  const doctorId = req.params.doctorId;
+  try {
+    const result = await Patient.find({ createdBy: doctorId }).sort({
+      createdAt: -1,
+    });
+    return res.status(201).json({ result });
+  } catch (error) {
+    return res.status(501).json({ error: error.message });
+  }
+};
+
 module.exports = {
   AddPatient,
   getPatientById,
   addPatientNewRecord,
   addFollowUp,
+  getAllPatientsMonthWiseAddedByDoctorId,
+  getLastTenPatientsByDoctorId,
 };

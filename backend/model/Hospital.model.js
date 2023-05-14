@@ -20,16 +20,26 @@ const hospitalSchema = new Schema({
     required: true,
   },
   address: {
-    type: String,
-    required: true,
-  },
-  adminEmail: {
-    type: String,
-    required: true,
+    street: {
+      type: String,
+      required: true,
+    },
+    pincode: {
+      type: String,
+      required: true,
+    },
+    city: {
+      type: String,
+      required: true,
+    },
+    state: {
+      type: String,
+      required: true,
+    },
   },
   doctors: {
     type: [mongoose.Schema.Types.ObjectId],
-    ref: "Doctors",
+    ref: "Doctor",
   },
   createdAt: {
     type: Date,

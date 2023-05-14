@@ -46,7 +46,7 @@ const get_user_from_respectiveTable = async (req, res) => {
     }
   } else if (role === "HOSPITAL") {
     try {
-      user = await Hospital.findOne({ email });
+      user = await Hospital.findOne({ email }).populate("doctors");
     } catch (err) {
       error = err;
       console.error(err);

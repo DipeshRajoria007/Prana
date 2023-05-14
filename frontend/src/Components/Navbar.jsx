@@ -76,7 +76,7 @@ const Navbar = () => {
             key={nav.id}
             className={` mr-10 cursor-pointer text-[16px] font-normal text-blackk `}
           >
-            <a href="/">{nav.title}</a>
+            <a href={nav.href}>{nav.title}</a>
           </li>
         ))}
         <button
@@ -96,7 +96,7 @@ const Navbar = () => {
         <div
           className={`${
             toggle ? "flex" : "hidden"
-          } sidebar absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl bg-pinkk p-6 `}
+          } sidebar absolute right-0 top-20 mx-4 my-2 min-w-[140px] rounded-xl bg-pinkk p-6 `}
         >
           <ul className="flex flex-1 list-none flex-col items-center justify-end  ">
             {navLinks.map((nav, idx) => (

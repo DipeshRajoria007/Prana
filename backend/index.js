@@ -1,13 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const cors = require("cors");
 const router = require("./routes/admin-router");
 const userRouter = require("./routes/user-routes");
 const loginRouter = require("./routes/login-route");
 const searchRouter = require("./routes/search-router");
 const doctorRouter = require("./routes/doctor-router");
-
+const appointmentRouter = require("./routes/appointment-router");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 6969;
@@ -20,6 +19,7 @@ app.use("/api", userRouter);
 app.use("/api", loginRouter);
 app.use("/api", searchRouter);
 app.use("/api", doctorRouter);
+app.use("/api/appointment", appointmentRouter);
 
 mongoose
   .connect(

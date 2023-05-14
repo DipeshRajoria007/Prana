@@ -53,6 +53,36 @@ const PatientOutletForDoctor = () => {
         </NavLink>
       </div>
       <div className=" flex w-full justify-center ">
+        {allData.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-12">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-20 w-20 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 14H7a2 2 0 01-2-2V7a2 2 0 012-2h6a2 2 0 012 2v2"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5h5M16 17h2a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2h2"
+              />
+            </svg>
+            <p className="mb-4 text-lg font-medium text-gray-500">
+              No Patient Is In Our Record
+            </p>
+            <p className="text-sm text-gray-400">
+              There is no data to display at the moment
+            </p>
+          </div>
+        )}
         {isFetching && <SmallSpinner />}
         {!isFetching && searchTerm === "" && allData?.length > 0 && (
           <PatientsTable elements={allData} />

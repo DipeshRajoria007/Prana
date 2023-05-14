@@ -79,9 +79,13 @@ const AddHospital = async (req, res, next) => {
       name,
       email,
       specializations,
-      address,
       contact,
-      adminEmail,
+      address: {
+        street: address.street,
+        pincode: address.pincode,
+        city: address.city,
+        state: address.state,
+      },
     });
     await newHospital.save();
   } catch (err) {
@@ -106,7 +110,7 @@ const GetAllHospitals = async (req, res) => {
   let Hospitals;
 
   try {
-    Hospitals = await Hospital.find();
+    Hospitals = await Hospital.find().populate("doctors");
   } catch (error) {
     console.log(error.message);
     return res.status(501).json({ message: error.message });
@@ -137,14 +141,6 @@ const AddDoctor = async (req, res) => {
     DOB,
     license,
   } = req.body;
-  // let exsistingDoctor;
-  // try {
-  //   exsistingDoctor = await Doctor.findOne({ aadhaarNumber });
-  // } catch (error) {
-  //   res.status(500).json({ message: error.message });
-  // }
-  // if (exsistingDoctor)
-  //   return res.status(501).json({ message: "Doctor already exists" });
   try {
     const doctor = new Doctor({
       name,

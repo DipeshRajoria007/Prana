@@ -79,6 +79,9 @@ const PatientOutlet = () => {
               </div>
             </div>
           </div>
+          <div className="flex flex-col gap-2 rounded-lg bg-white p-4 drop-shadow-2xl ">
+            <h1 className="mb-2 text-2xl font-bold uppercase text-gray-800"></h1>
+          </div>
           <MedicalHistory patient={patient} />
         </>
       )}

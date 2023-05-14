@@ -3,8 +3,13 @@ import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 import FollowUpCard from "./FollowUpCard";
 import FollowupForm from "./FollowupForm";
+import { useSelector } from "react-redux";
 
 const MedicalHistory = ({ patient }) => {
+  const {
+    user: { user },
+  } = useSelector((state) => state.auth);
+  console.log(user);
   const [displayCount, setDisplayCount] = useState(10);
   const [recordData, setRecordData] = useState({});
   const [opened, { open, close }] = useDisclosure(false);
@@ -44,12 +49,14 @@ const MedicalHistory = ({ patient }) => {
             <span className="font-bold">Doctor Name:</span>{" "}
             {record?.doctor?.name}
           </p>
-          <button
-            onClick={() => handleClickFollowUp(record)}
-            className="rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-700 "
-          >
-            Add Follow Up
-          </button>
+          {user?.role === "DOCTOR" && (
+            <button
+              onClick={() => handleClickFollowUp(record)}
+              className="rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-700 "
+            >
+              Add Follow Up
+            </button>
+          )}
           <hr className="my-2" />
           {record?.followups.length > 0 && (
             <div className="ml-2">

@@ -2,13 +2,16 @@ import { Table } from "@mantine/core";
 import { Link } from "react-router-dom";
 function PatientsTable({ elements }) {
   const rows = elements?.map((element, index) => (
-    <tr key={element._id}>
+    <tr className="max-h-2 text-ellipsis " key={element._id}>
       <td>{index + 1}</td>
       <td>{element.name}</td>
       <td>{element.email}</td>
       <td>{element.uniqueHealthId}</td>
       <td>{element.contact}</td>
-      <td>{element.address}</td>
+      {/* <td className=" text-ellipsis ">
+        {Object.values(element.address).map((value) => value + ", ")}
+      </td> */}
+
       <td>
         <Link
           to={element._id}
@@ -29,7 +32,7 @@ function PatientsTable({ elements }) {
           <th>Email Id</th>
           <th>Unique Health Id</th>
           <th>Contact</th>
-          <th>Address</th>
+          {/* <th>Address</th> */}
           <th>Action</th>
         </tr>
       </thead>
