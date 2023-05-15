@@ -26,7 +26,7 @@ A comprehensive SaaS platform designed to streamline and simplify the management
 
 Follow these steps to get the platform up and running on your local machine:
 
-1. **Clone the Repository**: Run `git clone <repository-url>` to clone the repository to your local machine.
+1. **Clone the Repository**: Run `git clone [<repository-url>](https://github.com/DipeshRajoria007/Prana.git)` to clone the repository to your local machine.
 
 2. **Install Node.js**: Ensure that you have Node.js installed on your system. If not, download it from [here](https://nodejs.org/en/download/).
 
@@ -36,11 +36,16 @@ Follow these steps to get the platform up and running on your local machine:
 
 5. **Install Dependencies**: Run `npm install` in the root of your project to install all necessary packages and dependencies.
 
-6. **Start the Server**: Run `npm start` to start the server. The platform should now be running on `localhost:3000`.
+6. **Start the FE Server**: 
+  `cd frontend` 
+  Run `npm run dev` to start the server. The platform should now be running on `localhost:5173`.
+7. **Start the BE Server**:
+  `cd ../backend` 
+  Run `nodemon index.js` to start the BE server. the platform should now be running on `localhost:8000`
 
 ## Usage 🚀
 
-Add instructions on how to use the platform.
+You must be having credentials to login and start using it, for that contact me😌
 
 ## Contribution 🤝
 
@@ -48,10 +53,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License 📝
 
-Add details about the license.
-
-Remember to replace the placeholder sections (Usage and License) with your specific information. Enjoy your new, stylish README!
-
----
-
-Remember to replace `<repository-url>` with the URL of your GitHub repository in the Installation section.
+Unless explicitly stated otherwise, all rights including but not limited to copyright and intellectual property rights in and to this software and its associated documentation files ("The Software") are reserved. Use of the Software is not permitted without prior written authorization from the author.
