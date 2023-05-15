@@ -33,6 +33,9 @@ export const adminApi = createApi({
     getPatientCount: builder.query({
       query: () => "/getpatientcount",
     }),
+    getHospitalCount: builder.query({
+      query: () => "/gethospitalcount",
+    }),
     getHospitals: builder.query({
       query: () => "/getallhospitals",
     }),
@@ -55,8 +58,8 @@ export const adminApi = createApi({
       query: () => "/getmonthwisedoctors",
     }),
     updateUserPassword: builder.mutation({
-      query: ({ id, payload }) => ({
-        url: `/admin/reset/${id}`,
+      query: (payload) => ({
+        url: `/resetpassword`,
         method: "PUT",
         body: payload,
       }),
@@ -67,6 +70,7 @@ export const adminApi = createApi({
 export const {
   useGetDoctorCountQuery,
   useGetPatientCountQuery,
+  useGetHospitalCountQuery,
   useAddDoctorMutation,
   useAddHospitalMutation,
   useGetHospitalsQuery,

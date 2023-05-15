@@ -1,5 +1,5 @@
 import { FaUserMd, FaWheelchair } from "react-icons/fa";
-import { FiUser } from "react-icons/fi";
+import { FiCalendar, FiUser } from "react-icons/fi";
 import { RiUserHeartLine, RiUserAddLine, RiHospitalFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import AreaChart from "../Components/AreaChart";
@@ -8,6 +8,7 @@ import DoctorsTable from "../Components/DoctorsTable";
 import PatientsTable from "../Components/PatientsTable";
 import PieChart from "../Components/PieChart";
 import SideTable from "../Components/SideTable";
+import { useGetAppointmentsByDoctorIdQuery } from "../features/Api/appointmentApi";
 import {
   useGetAllPatientsMonthWiseAddedByParticularDoctorQuery,
   useGetLastTenPatientsByDoctorIdQuery,
@@ -28,6 +29,8 @@ const DoctorOutlet = () => {
     isError: isErrorTenPateints,
     error: errorTenPatients,
   } = useGetLastTenPatientsByDoctorIdQuery(data._id);
+  const { data: appointment } = useGetAppointmentsByDoctorIdQuery(data._id);
+
   return (
     <div className="grid min-h-full grid-cols-3 gap-8 bg-white p-4  ">
       <div className="drop-shadow-c col-span-3  grid gap-4 rounded-2xl  bg-white p-4 align-middle">
@@ -73,7 +76,35 @@ const DoctorOutlet = () => {
           <h1>Recently Added Patients </h1>
         </div>
         <SideTable elements={lastTenPatients?.result} />
-        {/* <SideTable elements={[]} /> */}
+      </div>
+      <div className="col-span-3 p-4">
+        <h2 className="mb-4 text-2xl font-semibold text-gray-600">
+          Upcoming Appointments
+        </h2>
+        <div className="grid grid-cols-2 gap-6">
+          {appointment?.map((appointment) => (
+            <div
+              className="drop-shadow-c mb-4 rounded-2xl bg-white p-6  transition-all  hover:drop-shadow-2xl"
+              key={appointment._id}
+            >
+              <div className="mb-2 flex items-center">
+                <FiCalendar className="mr-2" />
+                <p className="text-lg">
+                  {new Date(appointment.appointmentDate).toLocaleDateString()}{" "}
+                  at {appointment.appointmentTime}
+                </p>
+              </div>
+              <div className="mb-2">
+                <span className="font-semibold">Patient:</span>{" "}
+                {appointment.patient.name}
+              </div>
+              <div>
+                <span className="font-semibold">Doctor:</span>{" "}
+                {appointment.doctor.name}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

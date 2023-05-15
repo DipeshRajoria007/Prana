@@ -15,6 +15,7 @@ import {
   useGetLastTenPatientsQuery,
   useGetMonthWisePatientsCountQuery,
   useGetMonthWiseDoctorsCountQuery,
+  useGetHospitalCountQuery,
 } from "../features/Api/adminApi";
 const AdminOutlet = () => {
   const {
@@ -39,12 +40,14 @@ const AdminOutlet = () => {
     error: errorTenPatients,
   } = useGetLastTenPatientsQuery();
   const { data: Patients } = useGetPatientCountQuery();
+  const { data: Hospitals } = useGetHospitalCountQuery();
   const {
     data: PatientsCount,
     isLoading: isLoadingPatientsMonthWise,
     isError: isErrorPatientsMonthWise,
     error: errorPatientsMonthWise,
   } = useGetMonthWisePatientsCountQuery();
+
   const {
     data: DoctorsCount,
     isLoading: isLoadingDoctorsMonthWise,
@@ -67,7 +70,7 @@ const AdminOutlet = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-8 border-2 bg-white p-4  ">
+    <div className="grid grid-cols-3 gap-8 border-2 bg-white p-4 text-gray-700  ">
       <div className="drop-shadow-c col-span-2  grid gap-4 rounded-2xl  bg-white p-4 align-middle">
         <div className="flex gap-2 ">
           <FiUser className="text-xl" />
@@ -121,7 +124,7 @@ const AdminOutlet = () => {
               Total <br /> Hospitals
             </p>
           </div>
-          <p className="text-center text-5xl font-bold ">{Patients?.data}</p>
+          <p className="text-center text-5xl font-bold ">{Hospitals?.data}</p>
         </div>
       </div>
 

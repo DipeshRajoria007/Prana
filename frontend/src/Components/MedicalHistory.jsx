@@ -52,20 +52,22 @@ const MedicalHistory = ({ patient }) => {
           {user?.role === "DOCTOR" && (
             <button
               onClick={() => handleClickFollowUp(record)}
-              className="rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-700 "
+              className="my-2 rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-700 "
             >
               Add Follow Up
             </button>
           )}
-          <hr className="my-2" />
           {record?.followups.length > 0 && (
-            <div className="ml-2">
-              <h1 className="text-xl font-semibold">Follow ups</h1>
-              {record?.followups.map((followup) => (
-                <FollowUpCard followup={followup} />
-              ))}
-            </div>
+            <>
+              <h1 className="my-4 text-xl font-semibold">Follow ups</h1>
+              <div className=" mt-2">
+                {record?.followups.map((followup) => (
+                  <FollowUpCard followup={followup} />
+                ))}
+              </div>
+            </>
           )}
+          <hr className="my-2" />
         </div>
       ))}
       {patient?.history?.length > displayCount && (

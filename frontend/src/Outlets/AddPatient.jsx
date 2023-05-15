@@ -222,6 +222,7 @@ const AddPatient = () => {
             placeholder="Name"
           />
           <NumberInput
+            withAsterisk
             label="Contact No."
             hideControls
             {...form.getInputProps("contact")}
@@ -230,6 +231,7 @@ const AddPatient = () => {
             placeholder="Contact info"
           />
           <TextInput
+            withAsterisk
             label="Email Id"
             {...form.getInputProps("email")}
             icon={<MdAttachEmail />}

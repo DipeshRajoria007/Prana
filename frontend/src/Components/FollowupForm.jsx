@@ -1,7 +1,10 @@
 import { Textarea } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import { useEffect } from "react";
-import { useAddFollowUpMutation } from "../features/Api/doctorApi";
+import {
+  useAddFollowUpMutation,
+  useGetPatientByIdQuery,
+} from "../features/Api/doctorApi";
 import { RiUserAddFill } from "react-icons/ri";
 import { BiMessageDetail } from "react-icons/bi";
 import { FaNotesMedical } from "react-icons/fa";
@@ -15,6 +18,8 @@ const FollowupForm = ({ history, patient }) => {
     user: { user },
   } = useSelector((state) => state.auth);
   console.log(history);
+  const { refetch } = useGetPatientByIdQuery(patient?._id);
+
   const [
     addFollowUp,
     { data, success, error, isError, isSuccess, isLoading, isFetching },
@@ -34,6 +39,10 @@ const FollowupForm = ({ history, patient }) => {
   });
   useEffect(() => {
     if (isError) toast.error(error.data.message);
+    if (isSuccess) {
+      toast.success(data.message);
+      refetch();
+    }
   }, [isError, isSuccess]);
   const handleSubmit = (values) => {
     console.log(patient._id);

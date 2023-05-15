@@ -1,6 +1,10 @@
 import { Table } from "@mantine/core";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function PatientsTable({ elements }) {
+  const {
+    user: { user: user },
+  } = useSelector((state) => state.auth);
   const rows = elements?.map((element, index) => (
     <tr className="max-h-2 text-ellipsis " key={element._id}>
       <td>{index + 1}</td>
@@ -12,14 +16,16 @@ function PatientsTable({ elements }) {
         {Object.values(element.address).map((value) => value + ", ")}
       </td> */}
 
-      <td>
-        <Link
-          to={element._id}
-          className=" rounded-md  bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 "
-        >
-          Prescribe
-        </Link>
-      </td>
+      {user.role === "DOCTOR" && (
+        <td>
+          <Link
+            to={element._id}
+            className=" rounded-md  bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 "
+          >
+            Prescribe
+          </Link>
+        </td>
+      )}
     </tr>
   ));
 
@@ -33,7 +39,7 @@ function PatientsTable({ elements }) {
           <th>Unique Health Id</th>
           <th>Contact</th>
           {/* <th>Address</th> */}
-          <th>Action</th>
+          {user.role === "DOCTOR" && <th>Action</th>}
         </tr>
       </thead>
       <tbody>{rows}</tbody>

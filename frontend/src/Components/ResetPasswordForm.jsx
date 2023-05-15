@@ -1,8 +1,9 @@
 import { useUpdateUserPasswordMutation } from "../features/Api/adminApi";
 import { useSelector } from "react-redux";
 import { useForm } from "@mantine/form";
-import { PasswordInput, TextInput } from "@mantine/core";
-
+import { LoadingOverlay, PasswordInput, TextInput } from "@mantine/core";
+import { useEffect } from "react";
+import { toast } from "react-toastify";
 const ResetPasswordForm = () => {
   const {
     user: { user },
@@ -33,17 +34,24 @@ const ResetPasswordForm = () => {
     //   handleChange({ target: { name: "confirmPassword", value: "" } });
     // },
   });
+  const [updatePassword, { isLoading, isSuccess, isError, error, data }] =
+    useUpdateUserPasswordMutation();
+  useEffect(() => {
+    if (isSuccess) toast.success(data.message);
+    if (isError) toast.error(error.data.message);
+  }, [isSuccess, isError]);
+  console.log({ isLoading, isSuccess, isError, error, data });
   const handleSubmit = (values) => {
-    console.log(values);
     const payload = {
       ...values,
-      role: "PATIENT",
-      doctor: user._id,
+      role: user.role,
+      email: user.email,
     };
-    console.log(payload);
+    updatePassword(payload);
   };
-
-  const [updatePassword, { isLoading }] = useUpdateUserPasswordMutation();
+  if (isLoading) {
+    return <LoadingOverlay visible />;
+  }
 
   return (
     <div className="rounded-lg bg-white  p-4 drop-shadow-2xl ">

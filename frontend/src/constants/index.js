@@ -10,11 +10,6 @@ export const navLinks = [
     href: "/features",
   },
   {
-    id: "product",
-    title: "Product",
-    href: "/products",
-  },
-  {
     id: "clients",
     title: "Clients",
     href: "/clients",
@@ -107,6 +102,92 @@ export const timeSlots = [
   "19:00",
   "19:30",
   "20:00",
+];
+export const clients = [
+  {
+    id: "1",
+    name: "Mayo Clinic",
+    email: "contact@mayoclinic.org",
+    contact: "1234567890",
+    address: {
+      street: "200 1st St SW",
+      city: "Rochester",
+      state: "MN",
+      pincode: "55905",
+    },
+  },
+  {
+    id: "2",
+    name: "Cleveland Clinic",
+    email: "info@clevelandclinic.org",
+    contact: "0987654321",
+    address: {
+      street: "9500 Euclid Ave",
+      city: "Cleveland",
+      state: "OH",
+      pincode: "44195",
+    },
+  },
+  {
+    id: "3",
+    name: "Johns Hopkins Hospital",
+    email: "contact@jhh.org",
+    contact: "1122334455",
+    address: {
+      street: "1800 Orleans St",
+      city: "Baltimore",
+      state: "MD",
+      pincode: "21287",
+    },
+  },
+  {
+    id: "4",
+    name: "Massachusetts General Hospital",
+    email: "info@mgh.org",
+    contact: "2233445566",
+    address: {
+      street: "55 Fruit St",
+      city: "Boston",
+      state: "MA",
+      pincode: "02114",
+    },
+  },
+  {
+    id: "5",
+    name: "UCSF Medical Center",
+    email: "contact@ucsfmed.org",
+    contact: "3344556677",
+    address: {
+      street: "505 Parnassus Ave",
+      city: "San Francisco",
+      state: "CA",
+      pincode: "94143",
+    },
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    name: "John Doe",
+    testimonial:
+      "This hospital provides an excellent service. I was really impressed with the efficiency and professionalism of the staff.",
+    position: "Patient",
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    testimonial:
+      "The doctors at this hospital are very knowledgeable and caring. They took the time to explain everything in detail.",
+    position: "Patient",
+  },
+  {
+    id: 3,
+    name: "Robert Johnson",
+    testimonial:
+      "I received excellent care at this hospital. The staff were friendly and helpful.",
+    position: "Patient",
+  },
 ];
 
 export const states = [

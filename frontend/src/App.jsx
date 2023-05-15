@@ -24,6 +24,7 @@ import SettingsOutlet from "./Outlets/SettingsOutlet";
 import AppointmentOutlet from "./Outlets/AppointmentOutlet.jsx";
 import HospitalOutlet from "./Outlets/HospitalOutlet";
 import Features from "./Pages/Features";
+import Clients from "./Pages/clients";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/features" element={<Features />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/clients" element={<Clients />} />
           <Route path="/admin" element={<AdminDashboard />}>
             <Route path="/admin" element={<AdminOutlet />} />
             <Route path="hospitals" element={<HospitalsOutlet />} />

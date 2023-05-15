@@ -6,13 +6,23 @@ export const appointmentApi = createApi({
     baseUrl: "http://localhost:8000/api/appointment",
   }),
   endpoints: (builder) => ({
-    getAppointmentsByDoctorId: builder.query({
-      query: (doctorId, appointmentDate) =>
-        `/appointments?doctor=${doctorId}&date=${appointmentDate}`,
+    getAppointmentsByDoctorIdWithTimeSlot: builder.query({
+      query: ({ doctorId, appointmentDate }) => {
+        return `/appointments/${doctorId}/${appointmentDate}`;
+      },
     }),
     getAppointmentsByPatientId: builder.query({
-      query: (patientId, appointmentDate) =>
-        `/appointments?patient=${patientId}`,
+      query: (patientId) => ({
+        url: `/appointmentsOfPatient/${patientId}`,
+      }),
+    }),
+    getAppointmentsByDoctorId: builder.query({
+      query: (doctorId) => ({
+        url: `/appointmentsOfDoctor/${doctorId}`,
+      }),
+    }),
+    getAppointmentsByHospitalId: builder.query({
+      query: (hospitalId) => `/appointmentsOfHospital/${hospitalId}`,
     }),
     addAppointment: builder.mutation({
       query: (appointment) => ({
@@ -21,8 +31,21 @@ export const appointmentApi = createApi({
         body: appointment,
       }),
     }),
+    deleteAppointment: builder.mutation({
+      query: (id) => ({
+        url: `/${id}`,
+        method: "DELETE",
+      }),
+    }),
   }),
 });
 
-export const { useAddAppointmentMutation, useGetAppointmentsByDoctorIdQuery } =
-  appointmentApi;
+export const {
+  useAddAppointmentMutation,
+  useGetAppointmentsByDoctorIdWithTimeSlotQuery,
+  useLazyGetAppointmentsByDoctorIdWithTimeSlotQuery,
+  useGetAppointmentsByPatientIdQuery,
+  useGetAppointmentsByHospitalIdQuery,
+  useGetAppointmentsByDoctorIdQuery,
+  useDeleteAppointmentMutation,
+} = appointmentApi;

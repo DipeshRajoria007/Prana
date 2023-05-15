@@ -19,11 +19,6 @@ const HospitalDashboard = () => {
       icon: <FaUserNurse className="text-2xl" />,
       url: "doctors",
     },
-    {
-      title: "Patients",
-      icon: <FaUser className="text-2xl" />,
-      url: "patients",
-    },
   ];
   return (
     <div className="flex h-[100vh]">
