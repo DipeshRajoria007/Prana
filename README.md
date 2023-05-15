@@ -26,7 +26,7 @@ A comprehensive SaaS platform designed to streamline and simplify the management
 
 Follow these steps to get the platform up and running on your local machine:
 
-1. **Clone the Repository**: Run `git clone [<repository-url>](https://github.com/DipeshRajoria007/Prana.git)` to clone the repository to your local machine.
+1. **Clone the Repository**: Run `git clone https://github.com/DipeshRajoria007/Prana.git` to clone the repository to your local machine.
 
 2. **Install Node.js**: Ensure that you have Node.js installed on your system. If not, download it from [here](https://nodejs.org/en/download/).
 
