@@ -1,15 +1,14 @@
-Sure, I can provide a more detailed Installation and Features section:
+# PRANA : Pledge to Life !💉💊🏥
+## A Hospital Information Management System
 
----
-
-# Unified Health Record Management System 💉💊🏥
 
 A comprehensive SaaS platform designed to streamline and simplify the management of health records for Hospitals, Doctors, and Patients. Providing individual dashboards tailored to each role, our platform serves as a one-stop solution for all healthcare record needs. 🚀
 
 ## Table of Contents
 
 - [Features](#features)
-- [Installation](#installation)
+- [Installation](#installation) A Hospital Information Management System
+
 - [Usage](#usage)
 - [Contribution](#contribution)
 - [License](#license)
