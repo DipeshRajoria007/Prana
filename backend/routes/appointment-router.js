@@ -15,8 +15,15 @@ appointmentRouter.post("/", createAppointment);
 appointmentRouter.get("/", getAppointments);
 appointmentRouter.get("/:id", getAppointmentById);
 appointmentRouter.delete("/:id", deleteAppointment);
-appointmentRouter.get("/appointments", getAppointmentsByDoctorIdWithTimeSlot);
-appointmentRouter.get("/appointmentsOfPatient", getAppointmentsByPatientId);
-appointmentRouter.get("/appointmentsOfHospital", getAppointmentsByHospitalId);
-appointmentRouter.get("/appointmentsOfDoctor", getAppointmentsByDoctorId);
+appointmentRouter.get(
+  "/appointments/:doctor/:date",
+  getAppointmentsByDoctorIdWithTimeSlot
+);
+appointmentRouter.get("/appointmentsOfPatient/:id", getAppointmentsByPatientId);
+appointmentRouter.get(
+  "/appointmentsOfHospital/:id",
+  getAppointmentsByHospitalId
+);
+appointmentRouter.get("/appointmentsOfDoctor/:id", getAppointmentsByDoctorId);
+appointmentRouter.delete("/:id", deleteAppointment);
 module.exports = appointmentRouter;

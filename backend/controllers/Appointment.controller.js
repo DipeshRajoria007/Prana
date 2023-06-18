@@ -22,15 +22,15 @@ exports.getAppointments = async (req, res) => {
 };
 exports.getAppointmentsByDoctorIdWithTimeSlot = async (req, res) => {
   try {
-    const { doctor, date } = req.query;
+    const { doctor, date } = req.params;
 
     // Parse the date string into a Date object
     const appointmentDate = new Date(date);
 
     // Find appointments for the given doctor ID and date
     const appointments = await Appointment.find({
-      doctorId: doctor,
-      date: {
+      doctor: doctor,
+      appointmentDate: {
         $gte: new Date(appointmentDate.setHours(00, 00, 00)),
         $lt: new Date(appointmentDate.setHours(23, 59, 59)),
       },
@@ -44,14 +44,18 @@ exports.getAppointmentsByDoctorIdWithTimeSlot = async (req, res) => {
       .json({ error: "An error occurred while fetching appointments" });
   }
 };
-exports.getAppointmentsByDoctorId = async (req, res) => {
-  try {
-    const { doctor } = req.query;
 
+exports.getAppointmentsByDoctorId = async (req, res) => {
+  const { id } = req.params;
+
+  try {
     // Find appointments for the given doctor ID and date
     const appointments = await Appointment.find({
-      doctor,
-    });
+      doctor: id,
+    })
+      .populate("patient")
+      .populate("doctor")
+      .populate("hospital");
 
     // Send the appointments as a response
     res.json(appointments);
@@ -63,12 +67,13 @@ exports.getAppointmentsByDoctorId = async (req, res) => {
 };
 exports.getAppointmentsByPatientId = async (req, res) => {
   try {
-    const { patient } = req.query;
-
+    const { id } = req.params;
+    console.log(id);
     // Find appointments for the given doctor ID and date
-    const appointments = await Appointment.find({
-      patient,
-    });
+    const appointments = await Appointment.find({ patient: id })
+      .populate("patient")
+      .populate("doctor")
+      .populate("hospital");
 
     // Send the appointments as a response
     res.json(appointments);
@@ -79,17 +84,21 @@ exports.getAppointmentsByPatientId = async (req, res) => {
   }
 };
 exports.getAppointmentsByHospitalId = async (req, res) => {
-  try {
-    const { hospital } = req.query;
+  const { id } = req.params;
 
+  try {
     // Find appointments for the given Hospital ID and date
     const appointments = await Appointment.find({
-      hospital,
-    });
+      hospital: id,
+    })
+      .populate("patient")
+      .populate("doctor")
+      .populate("hospital");
 
     // Send the appointments as a response
     res.json(appointments);
   } catch (error) {
+    console.error(error);
     res
       .status(500)
       .json({ error: "An error occurred while fetching appointments" });
@@ -110,11 +119,18 @@ exports.getAppointmentById = async (req, res) => {
 };
 
 exports.deleteAppointment = async (req, res) => {
+  const id = req.params.id;
   try {
-    const appointment = await Appointment.findById(req.params.id);
-    if (!appointment)
-      return res.status(404).json({ error: "Appointment not found" });
-    await appointment.remove();
+    // Find the appointment by id and delete it
+    const appointment = await Appointment.findByIdAndDelete(id);
+
+    // Check if appointment was actually deleted
+    if (!appointment) {
+      return res
+        .status(404)
+        .json({ message: "No appointment found with this id" });
+    }
+
     res.json({ message: "Appointment deleted" });
   } catch (err) {
     res.status(500).json({ error: err.message });

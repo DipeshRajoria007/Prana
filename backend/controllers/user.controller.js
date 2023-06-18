@@ -144,4 +144,8 @@ const add_user_to_table = async (req, res) => {
     return res.status(201).json({ message: "Patient added" });
   }
 };
-module.exports = { get_user_from_respectiveTable, add_user_to_table };
+
+module.exports = {
+  get_user_from_respectiveTable,
+  add_user_to_table,
+};

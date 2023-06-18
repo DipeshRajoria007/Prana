@@ -57,7 +57,7 @@ const AddPatient = async (req, res) => {
     console.log(error.stack);
     return res.status(401).json({ message: error.message });
   }
-  return res.status(200).json({ message: "success" });
+  return res.status(200).json({ message: "Patient Added Successfully" });
 };
 const getPatientById = async (req, res) => {
   const { id } = req.params;

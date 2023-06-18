@@ -13,6 +13,8 @@ const {
   getLastTenDoctors,
   getMonthWiseDoctorsCount,
   getMonthWisePatientsCount,
+  updateUserPassword,
+  getHospitalCount,
 } = require("../controllers/Admin.controller.js");
 const { add_user_to_userTable } = require("../middleware/addUserMiddleware.js");
 const router = express.Router();
@@ -20,6 +22,7 @@ router.post("/signupadmin", SignupAdmin);
 router.post("/signin", SignInAdmin);
 router.get("/admin/getdoctorcount", getDoctorCount);
 router.get("/admin/getPatientcount", getPatientCount);
+router.get("/admin/getHospitalCount", getHospitalCount);
 router.get("/admin/getallhospitals", GetAllHospitals);
 router.get("/admin/getalldoctors", GetAllDoctors);
 router.get("/admin/getallpatients", GetAllPatients);
@@ -29,4 +32,5 @@ router.get("/admin/getlasttendoctors", getLastTenDoctors);
 router.get("/admin/getlasttenpatients", getLastTenPatients);
 router.get("/admin/getmonthwisedoctors", getMonthWiseDoctorsCount);
 router.get("/admin/getmonthwisepatients", getMonthWisePatientsCount);
+router.put("/admin/resetpassword", updateUserPassword);
 module.exports = router;

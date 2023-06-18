@@ -2,6 +2,8 @@ const Admin = require("../model/Admin.model.js");
 const Doctor = require("../model/Doctor.model.js");
 const Patient = require("../model/Patient.model.js");
 const Hospital = require("../model/Hospital.model");
+const User = require("../model/User.model.js");
+const bcrypt = require("bcryptjs");
 
 const SignupAdmin = async (req, res, next) => {
   const { name, email, password } = req.body;
@@ -49,10 +51,18 @@ const getDoctorCount = async (req, res) => {
   }
 };
 const getPatientCount = async (req, res) => {
-  console.log("GetPatientCount");
   try {
     const totalPatients = await Patient.count();
     return res.status(200).json({ data: totalPatients });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(501).json({ message: error.message });
+  }
+};
+const getHospitalCount = async (req, res) => {
+  try {
+    const totalHospitals = await Hospital.count();
+    return res.status(200).json({ data: totalHospitals });
   } catch (error) {
     console.log(error.message);
     return res.status(501).json({ message: error.message });
@@ -250,12 +260,44 @@ const getMonthWisePatientsCount = async (req, res) => {
     res.status(500).json({ err });
   }
 };
+const updateUserPassword = async (req, res) => {
+  console.log("password updated");
+  const { email, role } = req.body;
+  try {
+    const user = await User.findOne({ email, role });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const validPassword = await bcrypt.compare(
+      req.body.currentPassword,
+      user.password
+    );
+
+    if (!validPassword) {
+      return res.status(400).json({ message: "Current password is incorrect" });
+    }
+
+    const salt = await bcrypt.genSalt(10);
+    const newPassword = await bcrypt.hash(req.body.newPassword, salt);
+
+    user.password = newPassword;
+    await user.save();
+
+    res.status(200).json({ message: "Password updated successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};
 
 module.exports = {
   SignupAdmin,
   SignInAdmin,
   getDoctorCount,
   getPatientCount,
+  getHospitalCount,
   AddHospital,
   GetAllHospitals,
   GetAllDoctors,
@@ -265,4 +307,5 @@ module.exports = {
   getLastTenPatients,
   getMonthWiseDoctorsCount,
   getMonthWisePatientsCount,
+  updateUserPassword,
 };
