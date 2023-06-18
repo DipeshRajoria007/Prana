@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { FaHospital, FaUser, FaUserNurse } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
-import SideBar from "../Components/SideBar";
+import SideBar from "../components/SideBar";
 import NotAuthorized from "./NotAuthorized";
 import { Outlet } from "react-router-dom";
 const HospitalDashboard = () => {

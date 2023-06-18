@@ -9,8 +9,8 @@ import { MdAssignment } from "react-icons/md";
 import { BsGearFill } from "react-icons/bs";
 import featuresData from "../constants/index";
 import styles from "../styles";
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Features() {
   return (

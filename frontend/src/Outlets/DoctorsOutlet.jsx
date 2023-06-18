@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import DoctorsTable from "../Components/DoctorsTable";
+import DoctorsTable from "../components/DoctorsTable";
 import { GiHospitalCross } from "react-icons/gi";
 import { useGetDoctorsQuery } from "../features/Api/adminApi";
-import Spinner from "../Components/Spinner";
+import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
 
 const DoctorsOutlet = () => {

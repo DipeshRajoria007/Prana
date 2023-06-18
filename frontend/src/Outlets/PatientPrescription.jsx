@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import PatientCard from "../Components/PatientCard";
+import PatientCard from "../components/PatientCard";
 import { useGetPatientByIdQuery } from "../features/Api/doctorApi";
 const PatientPrescription = () => {
   const { id } = useParams();
