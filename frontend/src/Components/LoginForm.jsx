@@ -9,7 +9,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { login, reset } from "../features/auth/authSlice";
 import { RoleArr } from "../constants/index";
-import Spinner from "./Spinner";
 
 function LoginForm() {
   // const navigate = useNavigation();
