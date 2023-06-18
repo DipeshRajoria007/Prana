@@ -11,7 +11,7 @@ import DoctorOutlet from "./Outlets/DoctorOutlet";
 import AddHospital from "./Outlets/AddHospital";
 import AddPatient from "./Outlets/AddPatient";
 import AdminOutlet from "./Outlets/AdminOutlet";
-import LoginForm from "./Components/LoginForm";
+import LoginForm from "./components/LoginForm";
 import DoctorDashboard from "./Pages/DoctorDashboard";
 import HospitalDashboard from "./Pages/HospitalDashboard";
 import PatientDashboard from "./Pages/PatientDashboard";

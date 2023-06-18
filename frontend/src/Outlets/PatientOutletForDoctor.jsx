@@ -1,9 +1,9 @@
 import { Input } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { MdPersonSearch } from "react-icons/md";
-import PatientsTable from "../Components/PatientsTable";
-import SmallSpinner from "../Components/smallSpinner";
-import Spinner from "../Components/Spinner";
+import PatientsTable from "../components/PatientsTable";
+import SmallSpinner from "../components/smallSpinner";
+import Spinner from "../components/Spinner";
 import { useLazySearchPatientQuery } from "../features/Api/searchApi";
 import { FaUserPlus } from "react-icons/fa";
 import { useGetPatientsQuery } from "../features/Api/adminApi";
