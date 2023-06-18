@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { FaHospital, FaUser, FaUserNurse } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import { AiFillSetting } from "react-icons/ai";
-import SideBar from "../components/SideBar";
+import SideBar from "../Components/SideBar";
 import NotAuthorized from "./NotAuthorized";
 import { Outlet } from "react-router-dom";
 import { BsBookmarksFill } from "react-icons/bs";

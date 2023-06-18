@@ -2,12 +2,12 @@ import { FaUserMd, FaWheelchair } from "react-icons/fa";
 import { FiCalendar, FiUser } from "react-icons/fi";
 import { RiUserHeartLine, RiUserAddLine, RiHospitalFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
-import AreaChart from "../components/AreaChart";
-import DoctorsTable from "../components/DoctorsTable";
+import AreaChart from "../Components/AreaChart";
+import DoctorsTable from "../Components/DoctorsTable";
 
-import PatientsTable from "../components/PatientsTable";
-import PieChart from "../components/PieChart";
-import SideTable from "../components/SideTable";
+import PatientsTable from "../Components/PatientsTable";
+import PieChart from "../Components/PieChart";
+import SideTable from "../Components/SideTable";
 import { useGetAppointmentsByDoctorIdQuery } from "../features/Api/appointmentApi";
 import {
   useGetAllPatientsMonthWiseAddedByParticularDoctorQuery,

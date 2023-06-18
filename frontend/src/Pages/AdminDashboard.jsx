@@ -1,6 +1,6 @@
 import { Outlet, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import SideBar from "../components/SideBar";
+import SideBar from "../Components/SideBar";
 import { FaHospital, FaUser, FaUserNurse } from "react-icons/fa";
 import { RxDashboard } from "react-icons/rx";
 import NotAuthorized from "./NotAuthorized";

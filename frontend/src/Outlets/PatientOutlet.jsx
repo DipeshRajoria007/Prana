@@ -15,8 +15,8 @@ import { FiCalendar, FiTrash2 } from "react-icons/fi";
 import { FaUserNurse } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import Spinner from "../components/Spinner";
-import MedicalHistory from "../components/MedicalHistory";
+import Spinner from "../Components/Spinner";
+import MedicalHistory from "../Components/MedicalHistory";
 import {
   useDeleteAppointmentMutation,
   useGetAppointmentsByPatientIdQuery,

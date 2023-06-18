@@ -1,9 +1,9 @@
 import { Avatar } from "@mantine/core";
 import React from "react";
 import { FiUser } from "react-icons/fi";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
-import Testimonials from "../components/Testimonials";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
+import Testimonials from "../Components/Testimonials";
 import { clients } from "../constants/index";
 import styles from "../styles";
 const Clients = () => {

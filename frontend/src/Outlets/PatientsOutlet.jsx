@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import PatientsTable from "../components/PatientsTable";
+import PatientsTable from "../Components/PatientsTable";
 import { GiHospitalCross } from "react-icons/gi";
 import { useGetPatientsQuery } from "../features/Api/adminApi";
-import Spinner from "../components/Spinner";
+import Spinner from "../Components/Spinner";
 import { toast } from "react-toastify";
 
 const PatientsOutlet = () => {

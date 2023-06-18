@@ -1,4 +1,4 @@
-import ResetPassword from "../components/ResetPasswordForm";
+import ResetPassword from "../Components/ResetPasswordForm";
 
 const SettingsOutlet = () => {
   return (

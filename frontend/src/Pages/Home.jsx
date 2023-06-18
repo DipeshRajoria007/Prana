@@ -1,8 +1,8 @@
 import styles from "../styles";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Benifits from "../components/Benifits";
-import Footer from "../components/Footer";
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
+import Benifits from "../Components/Benifits";
+import Footer from "../Components/Footer";
 
 const Home = () => {
   return (
